@@ -50,6 +50,7 @@ const build = {
     return src(paths.files.dev.css)
       .pipe(plugins.plumber( utils.errorHandler('MOVE CSS') ))
       .pipe(plugins.cssnano())
+      .pipe(plugins.autoprefixer({ overrideBrowserslist: ['last 10 version'] }))
       .pipe(dest(paths.folders.build.css))
   },
 
