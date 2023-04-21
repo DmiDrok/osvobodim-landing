@@ -1,0 +1,162 @@
+@use 'vars' as vars;
+
+// Крутящийся круг
+.main-action {
+  width: 200px;
+  height: 200px;
+  background: vars.$color-accent-1;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease .1s;
+
+  &__icon-block {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    border: 2px dashed #fff;
+    border-radius: 50%;
+  }
+
+  &__rotate {
+    // animation: rotate linear infinite 5s forwards;
+    animation-name: rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+  }
+
+  &:hover .main-action__rotate {
+    animation-play-state: paused;
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+}
+
+// Бургер
+.burger {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border: none;
+  // outline: none;
+  background: none;
+  display: none; // flex
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    background: vars.$color-accent-2;
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  &__inner {
+    width: 20px;
+    height: 20px;
+    // background: green;
+    z-index: 1;
+    position: relative;
+    transform: translateY(20%);
+  }
+
+  &__line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: vars.$color-text;
+    left: 0;
+    // transition: transform ease .2s, opacity ease 1s, top ease 1s;
+    transition: transform ease .2s, opacity ease 1s;
+
+    &_1 {
+      // top: 0;
+      transform: translate(0);
+    }
+    
+    &_2 {
+      // top: 5px;
+      transform: translate(0, 5px);
+    }
+    
+    &_3 {
+      // top: 10px;
+      transform: translate(0, 10px);
+    }
+  }
+
+  @media (max-width: 690px) {
+    display: flex;
+    grid-area: burger;
+    justify-self: flex-end;
+  }
+}
+
+// Скрытые элементы
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
+
+// Завлечение
+.attraction {
+  &__icon {
+    position: absolute;
+    left: -26px;
+    top: 0;
+    transform: translate(-100%, 100%);
+  }
+  
+  &__text {
+    position: relative;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 58px;
+    width: 70%;
+    margin: 0 auto;
+
+    b {
+      font-weight: 600;
+      color: vars.$color-accent-1;
+    }
+  }
+
+  &__subtext {
+    color: vars.$color-accent-1;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 64px;
+    line-height: 70px;
+    float: right;
+    width: 65%;
+    margin-top: 42px;
+  }
+
+  &__link {
+    float: right;
+    transition: opacity ease .2s, transform ease .1s;
+
+    &:hover {
+      opacity: .6;
+    }
+
+    &:active {
+      transform: scale(.9);
+    }
+  }
+}

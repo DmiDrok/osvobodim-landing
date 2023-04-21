@@ -1,0 +1,17 @@
+.popup.order-popup.order-popup-2
+  .popup__row.order-popup__row
+    button.close.order-popup__close(type="button" aria-label="Закрыть всплывающее окно?")
+      img(src="./images/cross.svg" alt="" aria-hidden="true")
+
+    .popup__content.order-popup__content
+      img.order-popup__decor-img(src="./images/order-decor-4.png" alt="" aria-hidden="true")
+
+      .order-popup__text
+        h3.order-popup__title
+          |Заказать звонок
+        p.order-popup__subtitle.
+          Заполните свои контактные данные, и в #[b ближайшее время] мы свяжемся с вами по указанному номеру
+
+        form.order-form.order-popup__form(name="order" action="" method="GET")
+          input.order-popup__input.order-popup__tel(required type="tel" name="tel-number")
+          button.order-popup__submit.trigger(type="submit" name="submit-btn" data-popup-selector=".success-popup") Заказать звонок
