@@ -114,6 +114,9 @@
 
 // Завлечение
 .attraction {
+  display: flex;
+  flex-direction: column;
+
   &__icon {
     position: absolute;
     left: -26px;
@@ -145,6 +148,8 @@
     float: right;
     width: 65%;
     margin-top: 42px;
+    align-self: flex-end;
+    hyphens: auto;
   }
 
   &__link {
@@ -158,5 +163,50 @@
     &:active {
       transform: scale(.9);
     }
+  }
+
+  @media (max-width: 730px) {
+    &__icon {
+      left: 50%;
+      top: -22px;
+      transform: translate(-50%, -100%);
+    }
+
+    &__text {
+      font-size: 24px;
+      line-height: 41px;
+      text-align: center;
+      width: 80%;
+    }
+
+    &__link {
+      display: inline-block;
+      float: none;
+      margin-top: 13px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__subtext {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+}
+
+// Картинка для заднего фона
+.bg {
+  z-index: -1;
+}
+
+// Заголовки секций
+.section-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 63px;
+
+  b {
+    color: vars.$color-text-bold;
   }
 }
