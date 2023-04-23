@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setCorrectMasks();
     setCorrectPopups();
     setCorrectForms();
+    setCorrectSliders();
+    setCorrectGallery();
   } catch(err) { 
   }
 });
@@ -113,3 +115,49 @@ function setCorrectForms() {
     });
   });
 }
+
+// Слайдеры
+function setCorrectSliders() {
+  // Слайдер с документами
+  const docsSliderActivate = () => {
+    const docsSlider = document.querySelector('.docs-slider');
+    const counter = document.querySelector('.slider-counter');
+    const counterNow = counter.querySelector('.slider-counter__now');
+    const counterMax = counter.querySelector('.slider-counter__max');
+
+    const docsSwiper = new Swiper(docsSlider, {
+      grabCursor: true,
+      speed: 800,
+      type: 'fraction',
+      navigation: {
+        nextEl: '.slider-outer__nav_to-next',
+        prevEl: '.slider-outer__nav_to-prev',
+      },
+      pagination: {
+        el: '.slider-outer__pagination',
+        clickable: true,
+      }
+    });
+
+    counterNow.innerText = docsSwiper.activeIndex + 1;
+    counterMax.innerText = docsSwiper.slides.length;
+    docsSwiper.on('slideChange', () => {
+      counterNow.innerText = docsSwiper.activeIndex + 1;
+    });
+  };
+  
+  docsSliderActivate();
+}
+
+// Всплывающая галерея
+function setCorrectGallery() {
+  Fancybox.bind("[data-fancybox]", {
+    contentClick: "iterateZoom",
+    Images: {
+      Panzoom: {
+        maxScale: 2,
+      },
+    },
+  });
+}
+

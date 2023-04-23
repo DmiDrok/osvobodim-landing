@@ -197,16 +197,74 @@
 // Картинка для заднего фона
 .bg {
   z-index: -1;
+  width: 100%;
 }
 
 // Заголовки секций
 .section-title {
   text-align: center;
-  font-weight: 600;
-  font-size: 52px;
-  line-height: 63px;
+  font-weight: 600 !important;
+  font-size: 52px !important;
+  line-height: 63px !important;
 
   b {
-    color: vars.$color-text-bold;
+    color: vars.$color-text-bold !important;
+  }
+
+  @media (max-width: 690px) {
+    font-size: 36px !important;
+    line-height: 44px !important;
   }
 }
+
+// Синяя кнопка подачи заявки
+.blue-action-btn {
+  padding: 30px 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  background: vars.$color-accent-1;
+  cursor: pointer;
+  border: none;
+  font-family: vars.$main-font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  transition: background ease .2s, transform ease .1s;
+
+  &:hover {
+    background: #3197F4;
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+}
+
+// Жёлтая кнопка подачи заявки
+.yellow-action-btn {
+  cursor: pointer;
+  background: vars.$color-accent-2;
+  color: #1E1E1E;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: vars.$main-font;
+  line-height: 22px;
+  padding: 30px 50px 30px 44px;
+  border: none;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  transition: background ease .2s, transform ease .1s;
+
+  &:hover {
+    background: #FFF07C;
+  }
+
+  &:active {
+    transform: scale(.98);
+  }
+}
+

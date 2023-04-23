@@ -1,0 +1,17 @@
+.popup.order-popup.order-popup-4
+  .popup__row.order-popup__row
+    button.close.order-popup__close(type="button" aria-label="Закрыть всплывающее окно?")
+      img(src="./images/cross.svg" alt="" aria-hidden="true")
+
+    .popup__content.order-popup__content
+      img.order-popup__decor-img(src="./images/order-decor-3.png" alt="" aria-hidden="true")
+
+      .order-popup__text
+        h3.order-popup__title Оставить заявку
+        span.order-popup__note Банкротство при сумме долга до 2 млн. руб.
+        p.order-popup__subtitle.
+          Запишитесь к нам на консультацию, чтобы мы могли обсудить все детали #[b вашего безопасного банкротства ]
+
+        form.order-form.order-popup__form(name="order" action="" method="GET")
+          input.order-popup__input.order-popup__tel(required type="tel" name="tel-number")
+          button.order-popup__submit.trigger(type="submit" name="submit-btn" data-popup-selector=".success-popup") Оставить заявку

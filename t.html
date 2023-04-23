@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+
+</head>
+<body>
+  <a
+  data-fancybox
+  data-src="https://lipsum.app/id/1/1600x1200"
+  data-caption="Hello world"
+>
+  <img src="https://lipsum.app/id/1/200x150" width="200" height="150" alt="" />
+</a>
+
+
+  <script>
+    Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+});
+  </script>
+</body>
+</html>

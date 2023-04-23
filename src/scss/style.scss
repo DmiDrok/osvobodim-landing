@@ -1,8 +1,13 @@
 @use 'reset';
+
+@use 'libs/swiper.scss';
+
 @use 'all';
 @use 'popups';
+@use 'sliders';
 @use 'vars' as vars;
 @use 'anims' as anims;
+
 
 .container {
   max-width: 1110px;
@@ -936,30 +941,6 @@ section {
     align-self: center;
   }
 
-  .order-button {
-    cursor: pointer;
-    background: vars.$color-accent-2;
-    color: #1E1E1E;
-    font-weight: 600;
-    font-size: 18px;
-    font-family: vars.$main-font;
-    line-height: 22px;
-    padding: 30px 50px 30px 44px;
-    border: none;
-    display: flex;
-    align-items: center;
-    column-gap: 16px;
-    transition: background ease .2s, transform ease .1s;
-
-    &:hover {
-      background: #FFF07C;
-    }
-
-    &:active {
-      transform: scale(.98);
-    }
-  }
-
   @media (max-width: 1400px) {
     &__decor-img {
       &_1 {
@@ -1119,11 +1100,6 @@ section {
   }
 
   @media (max-width: 690px) {
-    &__title {
-      font-size: 36px;
-      line-height: 44px;
-    }
-
     &__line {
       margin-top: 60px;
     }
@@ -1436,6 +1412,24 @@ section {
     }
   }
 
+  @media (max-width: 1870px) {
+    &__decor {
+      transform: translate(-65%, -40%);
+    }
+  }
+  
+  @media (max-width: 1670px) {
+    &__decor {
+      transform: translate(-75%, -40%);
+    }
+  }
+  
+  @media (max-width: 1325px) {
+    &__decor {
+      display: none;
+    }
+  }
+
   @media (max-width: 1280px) {
     &-list {
       grid-gap: 120px 140px;
@@ -1520,7 +1514,16 @@ section {
 
 // === Стоимости ===
 .cost {
+  overflow: visible;
   margin-top: 60px;
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 50%);
+  }
 
   &-grid {
     margin-top: 80px;
@@ -1535,11 +1538,14 @@ section {
 
   // Карточка со стоимостью
   &-item {
+    display: flex;
+
     &__article {
-      border-top: 4px solid vars.$color-accent-5;
-      background: #EAF7DE;
+      border-top: 5px solid vars.$color-accent-5;
+      background: #F7FFEF;
       display: flex;
       flex-direction: column;
+      flex-grow: 1;
     }
 
     &__row {
@@ -1547,6 +1553,8 @@ section {
       display: flex;
       flex-direction: column;
       row-gap: 40px;
+      align-items: center;
+      flex-grow: 1;
     }
 
     &__title {
@@ -1566,17 +1574,31 @@ section {
         font-size: 22px;
         font-weight: 700;
         letter-spacing: 2px;
-
+        text-transform: uppercase;
+        
         strong {
           font-size: 18px;
           font-weight: 600;
           white-space: nowrap;
           letter-spacing: 0;
+          text-transform: lowercase;
+        }
+      }
+
+      &.green {
+        .cost-item__title-sub strong {
+          background: vars.$color-accent-5;
+          color: #fff;
+          padding: 3px 7px;
+          margin-top: 3px;
+          display: inline-block;
         }
       }
     }
 
     &-list {
+      color: vars.$color-text-bold;
+
       &__item {
         display: flex;
         font-size: 16px;
@@ -1589,6 +1611,7 @@ section {
 
       &__value {
         font-weight: 400;
+        margin-left: 7px;
       }
 
       &__icon {
@@ -1639,29 +1662,511 @@ section {
 
     // Кнопка внизу карточки
     &__button {
-      margin-top: 80px;
-      padding: 30px 0;
-      color: #fff;
+      margin-top: 80px;      
+    }
+  }
+
+  // Примечание с кнопкой
+  &-note {
+    margin-top: 50px;
+    background: #F7FFEF;
+    border: 1px solid #EAF7DE;
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 86px;
+
+    &__title {
+      font-weight: 600;
+      font-size: 52px;
+      line-height: 60px;
+    }
+
+    &__action {
+      width: 377px;
+    }
+  }
+
+  @media (max-width: 1350px) {
+    &-grid {
+      &__list {
+        grid-gap: 25px;
+      }
+    }
+  }
+
+  @media (max-width: 1310px) {
+    &-grid {
+      &__list {
+        grid-gap: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+      }
+    }
+  }
+
+  @media (max-width: 910px) {
+    &-note {
+      column-gap: 35px;
+    }
+  }
+
+  @media (max-width: 870px) {
+    &-grid {
+      &__list {
+        grid-gap: 25px;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+      }
+    }
+
+    &-note {
+      flex-direction: column;
+      row-gap: 42px;
+
+      &__title {
+        text-align: center;
+      }
+
+      &__text {
+        text-align: center;  
+      }
+
+      &__action {
+        width: auto;
+        align-self: stretch;
+      }
+    }
+  }
+
+  @media (max-width: 840px) {
+    &-grid {
+      &__list {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  @media (max-width: 510px) {
+    &-note {
+      padding: 0;
+      padding-top: 40px;
+
+      &__title {
+        font-size: 24px;
+        line-height: 27px;
+      }
+    }
+  }
+}
+
+// === Если не хватает денег ===
+.blue-section {
+  overflow: visible;
+  margin-top: 146px;
+  background: url(../images/bg-lacks.png) center/cover no-repeat;
+
+  &__row {
+    padding: 70px 0 100px 0;
+  }
+
+  &__line {
+    position: relative;
+    display: grid;
+    grid-column-gap: 53px;
+    grid-template-columns: 1fr 1.4fr;
+    grid-template-areas: "image text";
+    align-items: center;
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, -20%);
+  }
+
+  &__image-block {
+    grid-area: image;
+  }
+
+  &__text-block {
+    position: relative;
+    z-index: 1;
+    grid-area: text;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    row-gap: 53px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 63px;
+    text-align: start;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+
+    b {
       font-weight: 700;
-      font-size: 16px;
-      line-height: 20px;
-      background: vars.$color-accent-1;
-      cursor: pointer;
-      border: none;
-      font-family: vars.$main-font;
+    }
+  }
+
+  &__action {
+    align-self: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 1250px) {
+    &__line {
+      grid-template-areas: "text image";
+      grid-template-columns: 1.7fr 1fr;
+    }
+
+    &__image {
+      left: unset;
+      top: unset;
+      right: 0;
+      bottom: 0;
+      transform: translate(70%, 3%);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__image {
+      transform: translate(65%, 3%);
+    }
+  }
+
+  @media (max-width: 840px) {
+    &__line {
+      grid-template-columns: none !important;
+      grid-template-areas: none !important;
+      grid-column-gap: none !important;
+    }
+
+    &__image {
+      position: relative;
+      transform: translate(-15%, 0);
+      max-width: 100%;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__text-block {
+      text-align: center;
+    }
+
+    &__action {
+      align-self: center;
+    }
+  }
+}
+
+// === Выигранные дела ===
+.cases {
+  overflow: visible;
+  background-image: url(../images/bg-cases.png);
+  background-repeat: no-repeat;
+  background-position: center -150px;
+  background-size: cover;
+
+  &__row {
+    padding-top: 170px;
+  }
+
+  &-title {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 92px;
+    line-height: 117px;
+    color: vars.$color-accent-1;
+
+    i {
+      color: vars.$color-accent-2;
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    &__bottom {
+      i {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  @media (max-width: 1030px) {
+    &__row {
+      padding-top: 40px;
+    }
+
+    &-title {
+      font-size: 78px;
+      line-height: 82px;
+
+      i {
+        font-size: 32px;
+        line-height: 38px;
+      }
+    }
+
+    .slider-outer {
+      margin-top: 100px;
+    }
+  }
+
+  @media (max-width: 830px) {
+    &-title {
+      font-size: 48px;
+      line-height: 58px;
+
+      i {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      &__bottom {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    background-image: url(../images/confetti-decor-2.png);
+    background-position: 0 -130px;
+    background-size: contain;
+  }
+
+  @media (max-width: 530px) {
+    &-title {
+      width: auto;
+      hyphens: auto;
+    }
+  }
+}
+
+// === Мы поможем ===
+.we-help {
+  position: relative;
+  // background: url(../images/bg-blue.png) center/cover no-repeat;
+
+  &__decor {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    z-index: 10;
+  }
+
+  &__row {
+    padding: 100px 0;
+  }
+
+  &__line {
+    grid-template-columns: 1fr 2.5fr;
+  }
+
+  &__image {
+    transform: translate(-120%, 0%);
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__text-block {
+    row-gap: 0;
+  }
+  
+  &__text {
+    margin-bottom: 70px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  @media (max-width: 1250px) {
+    &__decor {
+      transform: translate(-50%, -100%);
+    }
+
+    &__image {
+      transform: translate(105%, 30%);
+    }
+
+    &__line {
+      grid-template-columns: 2.2fr 1fr;
+    }
+  }
+
+  @media (max-width: 1145px) {
+    &__image {
+      transform: translate(90%, 30%);
+    }
+  }
+
+  @media (max-width: 840px) {
+    &__image {
+      transform: translate(0%, -10%);
+    }
+  }
+}
+
+// === Примеры ситуаций ===
+.examples {
+  margin-top: 100px;
+  padding-bottom: 200px;
+
+  &__title {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  &__decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  // Контейнер для слайдеров
+  &__grid {
+    position: relative;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 73px;
+  }
+
+  .example-block {
+    color: #fff;
+    padding: 30px 45px 30px 35px;
+    position: relative;
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 47px;
+      letter-spacing: 2px;
+      writing-mode: vertical-lr;
+      transform: scale(-1);
+    }
+  }
+
+  .problem {
+    background: vars.$color-accent-1;
+    width: 47%;
+  }
+  
+  .solve {
+    background: #fff;
+    width: 71%;
+    align-self: end;
+    box-shadow: 0px 0px 145px rgba(0, 0, 0, 0.1);
+
+    &__title {
+      color: vars.$color-accent-1;
+    }
+  }
+
+  // Кнопки управления, статус текущего
+  .extra {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    &-status {
+      font-weight: 700;
+      letter-spacing: 2px;
+      line-height: 29px;
+      text-transform: uppercase;
+      font-size: 24px;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      column-gap: 10px;
-      transition: background ease .2s, transform ease .1s;
+      column-gap: 20px;
+      color: #C4C4C4;
+
+      &__col {
+        display: flex;
+        column-gap: 6px;
+      }
+
+      &__text {
+        color: #5E5E5E;
+      }
+
+      &__now {
+        color: vars.$color-accent-1;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      column-gap: 110px;
+    }
+
+    &__nav {
+      width: 68px;
+      height: 68px;
+      background: vars.$color-accent-1;
+      border-radius: 50%;
+      z-index: 1;
+      border: none;
+      cursor: pointer;
+      transition: background ease .2s, opacity ease .1s, scale ease .05s;
 
       &:hover {
         background: #3197F4;
       }
-
+  
       &:active {
-        transform: scale(.95);
+        opacity: .8;
+        scale: .95;
       }
+    }
+  }
+
+  &-slogan {
+    display: flex;
+    justify-content: center;
+
+    &__text {
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 133px;
+      line-height: 162px;
+      letter-spacing: 2px;
+      color: #F6F6F6;
+      margin-top: 73px;
+      display: inline-block;
+      text-align: center;
+      cursor: default;
+      user-select: none;
+      pointer-events: none;
     }
   }
 }

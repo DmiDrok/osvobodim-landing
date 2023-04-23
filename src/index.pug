@@ -6,14 +6,23 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Освободим
 
+    //- Fonts
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
 
+    //- Styles
     link(rel="icon" href="./images/favicon.ico")
     link(rel="stylesheet" href="./css/style.min.css")
 
-    script(defer src="./js/inputmask.min.js")
+    //- Libs
+    script(defer src="./js/libs/inputmask.min.js")
+    script(defer src="./js/libs/swiper.min.js")
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+
+    //- Scripts
     script(defer src="./js/main.js")
   body
     //- Попапы
@@ -21,6 +30,8 @@ html(lang="ru")
     include includes/popups/success-popup
     include includes/popups/tel-popup
     include includes/popups/consult-popup
+    include includes/popups/request-popup
+    include includes/popups/checklist-popup
 
     //- Шапка (блок с крутящейся кнопкой)
     header.header#header
@@ -289,7 +300,7 @@ html(lang="ru")
                 img(src="./images/advantage-5.svg" alt="" aria-hidden="true")
                 span #[b прав] на вылет за границу
 
-            button.order-button.get-order__button.trigger(type="button" data-popup-selector=".order-popup")
+            button.yellow-action-btn.order-button.get-order__button.trigger(type="button" data-popup-selector=".order-popup")
               | Получить банкротство безопасно
               <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.2493 2.22961L6.24932 11.2276L2.75081 7.73024L0 10.481L6.24937 16.7295L18 4.98043L15.2493 2.22961Z" fill="#1E1E1E"/>
@@ -455,11 +466,12 @@ html(lang="ru")
         .pretty-action__row
           include includes/buttons/action-button
 
-    // Стоимость
+    //- Стоимость
     section.cost#cost
       .container.big.cost__container
         .cost__row
           h2.section-title.cost__title #[b Сколько стоит] #[br] процедура банкротства?
+          img.bg.cost__bg(src="./images/pattern-2.png" alt="" aria-hidden="true")
 
           .cost-grid
             ul.cost-grid__list
@@ -498,6 +510,412 @@ html(lang="ru")
                     del.cost-item-result__discount 170 тыс. руб.
                     ins.cost-item-result__price В рассрочку от 11 тыс. руб./мес.
 
-                button.cost-item__button(type="button")
+                button.trigger.blue-action-btn.cost-item__button(type="button" data-popup-selector=".order-popup-4")
                   | Оставить заявку
                   img(src="./images/write-icon.svg" alt="" aria-hidden="true")
+
+              li.cost-item
+               article.cost-item__article
+                .cost-item__row
+                  h3.cost-item__title
+                    span.cost-item__title-sup Банкротство #[br] при сумме долга
+                    span.cost-item__title-sub от 2 до 5 млн. руб. #[br] #[strong без сохранения имущества]
+
+                  dl.cost-item-list
+                    .cost-item-list__item
+                      dt.cost-item-list__title
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        |Наши услуги:
+                      dd.cost-item-list__value 220 000 руб.
+                    .cost-item-list__item
+                      dt.cost-item-list__title
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Сбор документов:
+                      dd.cost-item-list__value 10 000 руб.
+                    .cost-item-list__item
+                      dt.cost-item-list__title 
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Судебные расходы:
+                      dd.cost-item-list__value 50 000 руб.
+
+                  .cost-item-result
+                    span.cost-item-result__title Итого всё вместе:
+                    del.cost-item-result__discount 280 тыс. руб.
+                    ins.cost-item-result__price В рассрочку от 22 тыс. руб./мес.
+
+                button.trigger.blue-action-btn.cost-item__button(type="button" data-popup-selector=".order-popup-4")
+                  | Оставить заявку
+                  img(src="./images/write-icon.svg" alt="" aria-hidden="true")
+                  
+              li.cost-item
+               article.cost-item__article
+                .cost-item__row
+                  h3.cost-item__title
+                    span.cost-item__title-sup Банкротство #[br] при сумме долга
+                    span.cost-item__title-sub от 5 млн. руб. #[br] #[strong без сохранения имущества]
+
+                  dl.cost-item-list
+                    .cost-item-list__item
+                      dt.cost-item-list__title
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        |Наши услуги:
+                      dd.cost-item-list__value 330 000 руб.
+                    .cost-item-list__item
+                      dt.cost-item-list__title
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Сбор документов:
+                      dd.cost-item-list__value 10 000 руб.
+                    .cost-item-list__item
+                      dt.cost-item-list__title 
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Судебные расходы:
+                      dd.cost-item-list__value 50 000 руб.
+
+                  .cost-item-result
+                    span.cost-item-result__title Итого всё вместе:
+                    del.cost-item-result__discount 390 тыс. руб.
+                    ins.cost-item-result__price В рассрочку от 33 тыс. руб./мес.
+
+                button.trigger.blue-action-btn.cost-item__button(type="button" data-popup-selector=".order-popup-4")
+                  | Оставить заявку
+                  img(src="./images/write-icon.svg" alt="" aria-hidden="true")
+
+              li.cost-item
+               article.cost-item__article
+                .cost-item__row
+                  h3.cost-item__title.green
+                    span.cost-item__title-sup Банкротство #[br] при сумме долга
+                    span.cost-item__title-sub до 2 млн. руб. #[br] #[strong с сохранением имущества]
+
+                  dl.cost-item-list
+                    .cost-item-list__item
+                      dt.cost-item-list__title
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        |Наши услуги:
+                      dd.cost-item-list__value 160 000 руб.
+                    .cost-item-list__item
+                      dt.cost-item-list__title
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Сбор документов:
+                      dd.cost-item-list__value 15 000 руб.
+                    .cost-item-list__item
+                      dt.cost-item-list__title 
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Судебные расходы:
+                      dd.cost-item-list__value 50 000 руб.                  
+                    .cost-item-list__item
+                      dt.cost-item-list__title 
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Анализ ситуации: 
+                      dd.cost-item-list__value 4990 руб.
+
+                  .cost-item-result
+                    span.cost-item-result__title Итого всё вместе:
+                    del.cost-item-result__discount 230 тыс. руб.
+                    ins.cost-item-result__price В рассрочку от 16 тыс. руб./мес.
+
+                button.trigger.blue-action-btn.cost-item__button(type="button" data-popup-selector=".order-popup-4")
+                  | Оставить заявку
+                  img(src="./images/write-icon.svg" alt="" aria-hidden="true")
+
+              li.cost-item
+               article.cost-item__article
+                .cost-item__row
+                  h3.cost-item__title.green
+                    span.cost-item__title-sup Банкротство #[br] при сумме долга
+                    span.cost-item__title-sub От 2 до 5 млн. руб. #[br] #[strong с сохранением имущества]
+
+                  dl.cost-item-list
+                    .cost-item-list__item
+                      dt.cost-item-list__title
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        |Наши услуги:
+                      dd.cost-item-list__value 325 000 руб.
+                    .cost-item-list__item
+                      dt.cost-item-list__title
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Сбор документов:
+                      dd.cost-item-list__value 15 000 руб.
+                    .cost-item-list__item
+                      dt.cost-item-list__title 
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Судебные расходы:
+                      dd.cost-item-list__value 50 000 руб.                  
+                    .cost-item-list__item
+                      dt.cost-item-list__title 
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Анализ ситуации: 
+                      dd.cost-item-list__value 4990 руб.
+
+                  .cost-item-result
+                    span.cost-item-result__title Итого всё вместе:
+                    del.cost-item-result__discount 395 тыс. руб.
+                    ins.cost-item-result__price В рассрочку от 33 тыс. руб./мес.
+
+                button.trigger.blue-action-btn.cost-item__button(type="button" data-popup-selector=".order-popup-4")                
+                  | Оставить заявку
+                  img(src="./images/write-icon.svg" alt="" aria-hidden="true")
+                  
+              li.cost-item
+               article.cost-item__article
+                .cost-item__row
+                  h3.cost-item__title.green
+                    span.cost-item__title-sup Банкротство #[br] при сумме долга
+                    span.cost-item__title-sub от 5 млн. руб. #[br] #[strong с сохранением имущества]
+
+                  dl.cost-item-list
+                    .cost-item-list__item
+                      dt.cost-item-list__title
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        |Наши услуги:
+                      dd.cost-item-list__value 490 000 руб.
+                    .cost-item-list__item
+                      dt.cost-item-list__title
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Сбор документов:
+                      dd.cost-item-list__value 15 000 руб.
+                    .cost-item-list__item
+                      dt.cost-item-list__title 
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Судебные расходы:
+                      dd.cost-item-list__value 50 000 руб.                  
+                    .cost-item-list__item
+                      dt.cost-item-list__title 
+                        <svg class="cost-item-list__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="4" width="5.65695" height="5.65695" transform="rotate(-45 0 4)" fill="#93DA49"/>
+                        </svg>
+                        | Анализ ситуации: 
+                      dd.cost-item-list__value 4990 руб.
+
+                  .cost-item-result
+                    span.cost-item-result__title Итого всё вместе:
+                    del.cost-item-result__discount 560 тыс. руб.
+                    ins.cost-item-result__price В рассрочку от 49 тыс. руб./мес.
+
+                button.trigger.blue-action-btn.cost-item__button(type="button" data-popup-selector=".order-popup-4")
+                  | Оставить заявку
+                  img(src="./images/write-icon.svg" alt="" aria-hidden="true")
+
+          .cost-note
+            span.cost-note__title Бесплатная #[br] консультация
+            button.trigger.blue-action-btn.cost-note__action(type="button" data-popup-selector=".order-popup-4")
+              | Записаться
+              img(src="./images/write-icon.svg" alt="" aria-hidden="true")
+
+    //- Не хватает денег
+    section.blue-section.lacks#lacks
+      .container.blue-section__container.lacks__container
+        .blue-section__row.lacks__row
+          .blue-section__line.lacks__line
+            .blue-section__text-block.lacks__text-block
+              h2.section-title.blue-section__title.lacks__title Не хватает средств на процедуру банкротства?
+              p.blue-section__text.lacks__text #[b Получите бесплатный чек-лист] «7 дополнительных источников дохода при банкротстве физических лиц», который поможет вам найти деньги на юридические услуги по получению банкротства
+
+              .blue-section__image-block.lacks__image-block
+                picture
+                  source(srcset="./images/check-list-small.png 1x" type="image/png" media="(max-width: 1250px)")
+                  img.blue-section__image.lacks__image(src="./images/check-list.png" alt="чек-лист")
+
+              button.trigger.yellow-action-btn.blue-section__action.lacks__action(type="button" data-popup-selector=".order-popup-5")
+                | Получить чек-лист бесплатно
+                <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.2493 2.22961L6.24932 11.2276L2.75081 7.73024L0 10.481L6.24937 16.7295L18 4.98043L15.2493 2.22961Z" fill="#1E1E1E"/>
+                </svg>
+    
+    //- Выигранные дела (слайдер)
+    section.cases#cases
+      .container.cases__container
+        .cases__row
+          h2.cases-title
+            span.cases-title__top #[i Наши]
+            span.cases-title__bottom выигранные дела #[i о банкротстве]
+
+          .slider-outer
+            //- Декоративные картинки
+            img.slider-outer__decor(src="./images/slider-decor.png" alt="" aria-hidden="true")
+
+            .docs-slider.swiper
+              .swiper-wrapper
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+                .swiper-slide
+                  a(data-fancybox="scans" data-src="./images/slide-1.jpg")
+                    img(src="./images/slide-1.jpg" alt="документ" loading="lazy")
+
+            //- === Элементы управления ===
+            //- Кнопки назад - вперёд
+            button.slider-outer__nav.slider-outer__nav_to-prev(type="button")
+              <svg width="" height="" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.969395 10.8417C0.383608 11.4275 0.383608 12.3772 0.969395 12.963L10.5153 22.5089C11.1011 23.0947 12.0509 23.0947 12.6367 22.5089C13.2224 21.9232 13.2224 20.9734 12.6367 20.3876L4.15137 11.9023L12.6367 3.41706C13.2224 2.83127 13.2224 1.88153 12.6367 1.29574C12.0509 0.709954 11.1011 0.709954 10.5153 1.29574L0.969395 10.8417ZM27.7744 10.4023L2.03005 10.4023L2.03005 13.4023L27.7744 13.4023L27.7744 10.4023Z" fill="white"/>
+              </svg>
+            button.slider-outer__nav.slider-outer__nav_to-next(type="button")
+              <svg width="" height="" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.0306 10.8417C27.6164 11.4275 27.6164 12.3772 27.0306 12.963L17.4846 22.5089C16.8988 23.0947 15.9491 23.0947 15.3633 22.5089C14.7775 21.9232 14.7775 20.9734 15.3633 20.3876L23.8486 11.9023L15.3633 3.41706C14.7775 2.83127 14.7775 1.88153 15.3633 1.29574C15.9491 0.709954 16.8988 0.709954 17.4846 1.29574L27.0306 10.8417ZM0.225555 10.4023L25.9699 10.4023L25.9699 13.4023L0.225556 13.4023L0.225555 10.4023Z" fill="white"/>
+              </svg>
+
+            //- Пагинация
+            .slider-outer__pagination
+
+            //- Счётчик
+            .slider-outer__counter.slider-counter
+              span.slider-counter__now
+              span.slider-counter__sep из
+              span.slider-counter__max 
+
+    //- Мы поможем (синяя вставка)
+    section.blue-section.we-help#we-help
+      .container.blue-section__container.we-help__container
+        .blue-section__row.we-help__row
+          img.blue-section__decor.we-help__decor(src="./images/confetti-decor.png" alt="" aria-hidden="true")
+
+          .blue-section__line.we-help__line
+            .blue-section__text-block.we-help__text-block
+              h2.section-title.blue-section__title.we-help__title Мы поможем вам пройти процедуру банкротства с возможностью
+              p.blue-section__text.we-help__text сохранения имущества
+
+              .blue-section__image-block.we-help__image-block
+                picture
+                  source(srcset="./images/home-little.png 1x" type="image/png" media="(max-width: 840px)")
+                  source(srcset="./images/home-small.png 1x" type="image/png" media="(max-width: 1250px)")
+                  img.blue-section__image.we-help__image(src="./images/home.png" alt="чек-лист")
+
+              button.trigger.yellow-action-btn.blue-section__action.we-help__action(type="button" data-popup-selector=".order-popup-4")
+                | Списать до 100% долгов      
+
+    //- Примеры ситуаций
+    section.examples#examples
+      .container.big.examples__container
+
+        .examples__row
+          h2.section-title.examples__title Примеры ситуаций наших клиентов #[b и результаты нашей работы]
+
+          .examples__grid
+            img.examples__decor(src="./images/hammer.png" alt="" aria-hidden="true")
+
+            article.example-block.problem
+              <svg class="example-block__icon problem__icon" width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="20.998" width="28.2842" height="28.2842" transform="rotate(-45 0 20.998)" fill="#A60000"/>
+              </svg>
+
+              h3.example-block__title.problem__title Проблема
+
+            article.example-block.solve
+              <svg class="example-block__icon solve__icon" width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="20.9971" width="28.2842" height="28.2842" transform="rotate(-45 0 20.9971)" fill="#93DA49"/>
+              </svg>
+
+              h3.example-block__title.solve__title Решение
+
+            .examples__extra.extra
+              .extra-status
+                .extra-status__col
+                  span.extra-status__text Случай
+                  span.extra-status__now 1
+                .extra-status__col
+                  span.extra-status__sep из
+                  span.extra-status__max 15
+
+              .extra__buttons
+                button.extra__nav.extra__nav_to-prev(type="button")
+                  <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.368088 7.54875C-0.0224361 7.93928 -0.0224362 8.57244 0.368088 8.96296L6.73205 15.3269C7.12257 15.7175 7.75574 15.7175 8.14626 15.3269C8.53679 14.9364 8.53679 14.3032 8.14626 13.9127L2.48941 8.25586L8.14626 2.599C8.53679 2.20848 8.53679 1.57532 8.14626 1.18479C7.75574 0.794266 7.12257 0.794266 6.73205 1.18479L0.368088 7.54875ZM17.4361 7.25586L1.0752 7.25586L1.0752 9.25586L17.4361 9.25586L17.4361 7.25586Z" fill="white"/>
+                  </svg>
+
+                button.extra__nav.extra__nav_to-prev(type="button")
+                  <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.6319 7.54875C18.0224 7.93928 18.0224 8.57244 17.6319 8.96296L11.268 15.3269C10.8774 15.7175 10.2443 15.7175 9.85374 15.3269C9.46321 14.9364 9.46321 14.3032 9.85374 13.9127L15.5106 8.25586L9.85374 2.599C9.46321 2.20848 9.46321 1.57532 9.85374 1.18479C10.2443 0.794266 10.8774 0.794266 11.2679 1.18479L17.6319 7.54875ZM0.563904 7.25586L16.9248 7.25586L16.9248 9.25586L0.563904 9.25586L0.563904 7.25586Z" fill="white"/>
+                  </svg>
+
+          .examples-slogan
+            span.examples-slogan__text Освободим
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
