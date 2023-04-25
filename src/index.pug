@@ -1,15 +1,10 @@
 doctype html
 html(lang="ru")
   head
-    meta(charset="UTF-8")
+    meta(http-equiv="Content-Type" content="text/html" charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Освободим
-
-    //- Fonts
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
 
     //- Styles
     link(rel="icon" href="./images/favicon.ico")
@@ -819,11 +814,11 @@ html(lang="ru")
             //- === Элементы управления ===
             //- Кнопки назад - вперёд
             button.slider-outer__nav.slider-outer__nav_to-prev(type="button")
-              <svg width="" height="" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="1" height="1" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.969395 10.8417C0.383608 11.4275 0.383608 12.3772 0.969395 12.963L10.5153 22.5089C11.1011 23.0947 12.0509 23.0947 12.6367 22.5089C13.2224 21.9232 13.2224 20.9734 12.6367 20.3876L4.15137 11.9023L12.6367 3.41706C13.2224 2.83127 13.2224 1.88153 12.6367 1.29574C12.0509 0.709954 11.1011 0.709954 10.5153 1.29574L0.969395 10.8417ZM27.7744 10.4023L2.03005 10.4023L2.03005 13.4023L27.7744 13.4023L27.7744 10.4023Z" fill="white"/>
               </svg>
             button.slider-outer__nav.slider-outer__nav_to-next(type="button")
-              <svg width="" height="" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="1" height="1" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M27.0306 10.8417C27.6164 11.4275 27.6164 12.3772 27.0306 12.963L17.4846 22.5089C16.8988 23.0947 15.9491 23.0947 15.3633 22.5089C14.7775 21.9232 14.7775 20.9734 15.3633 20.3876L23.8486 11.9023L15.3633 3.41706C14.7775 2.83127 14.7775 1.88153 15.3633 1.29574C15.9491 0.709954 16.8988 0.709954 17.4846 1.29574L27.0306 10.8417ZM0.225555 10.4023L25.9699 10.4023L25.9699 13.4023L0.225556 13.4023L0.225555 10.4023Z" fill="white"/>
               </svg>
 
@@ -864,7 +859,9 @@ html(lang="ru")
           h2.section-title.examples__title Примеры ситуаций наших клиентов #[b и результаты нашей работы]
 
           .examples__grid
-            img.examples__decor(src="./images/hammer.png" alt="" aria-hidden="true")
+            picture
+              source(srcset="./images/hammer-small.png" type="image/png" media="(max-width: 480px)")
+              img.examples__decor(src="./images/hammer.png" alt="" aria-hidden="true")
 
             article.example-block.problem
               <svg class="example-block__icon problem__icon" width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -873,6 +870,55 @@ html(lang="ru")
 
               h3.example-block__title.problem__title Проблема
 
+              .example-block__slider-outer
+                .example-slider.problem__slider.swiper
+                  .swiper-wrapper
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      p.example-slider__text.problem__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+
             article.example-block.solve
               <svg class="example-block__icon solve__icon" width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect y="20.9971" width="28.2842" height="28.2842" transform="rotate(-45 0 20.9971)" fill="#93DA49"/>
@@ -880,14 +926,167 @@ html(lang="ru")
 
               h3.example-block__title.solve__title Решение
 
+              .example-block__slider-outer
+                .example-slider.solve__slider.swiper
+                  .swiper-wrapper
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб.                   
+                      p.example-slider__text.solve__text Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+                    .swiper-slide
+                      dl.solve-list
+                        .solve-list__item
+                          dt.solve-list__name Сроки:
+                          dd.solve-list__value 4 месяца
+                        .solve-list__item
+                          dt.solve-list__name Стоимость услуг:
+                          dd.solve-list__value 214 тыс. руб. 
+                      p.example-slider__text.solve__text.
+                        Учитывая ключевые сценарии поведения, глубокий уровень погружения, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для укрепления моральных ценностей. Кстати, предприниматели в сети интернет функционально разнесены на независимые элементы.
+
             .examples__extra.extra
               .extra-status
                 .extra-status__col
                   span.extra-status__text Случай
-                  span.extra-status__now 1
+                  span.extra-status__now
                 .extra-status__col
                   span.extra-status__sep из
-                  span.extra-status__max 15
+                  span.extra-status__max
 
               .extra__buttons
                 button.extra__nav.extra__nav_to-prev(type="button")
@@ -895,7 +1094,7 @@ html(lang="ru")
                     <path d="M0.368088 7.54875C-0.0224361 7.93928 -0.0224362 8.57244 0.368088 8.96296L6.73205 15.3269C7.12257 15.7175 7.75574 15.7175 8.14626 15.3269C8.53679 14.9364 8.53679 14.3032 8.14626 13.9127L2.48941 8.25586L8.14626 2.599C8.53679 2.20848 8.53679 1.57532 8.14626 1.18479C7.75574 0.794266 7.12257 0.794266 6.73205 1.18479L0.368088 7.54875ZM17.4361 7.25586L1.0752 7.25586L1.0752 9.25586L17.4361 9.25586L17.4361 7.25586Z" fill="white"/>
                   </svg>
 
-                button.extra__nav.extra__nav_to-prev(type="button")
+                button.extra__nav.extra__nav_to-next(type="button")
                   <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17.6319 7.54875C18.0224 7.93928 18.0224 8.57244 17.6319 8.96296L11.268 15.3269C10.8774 15.7175 10.2443 15.7175 9.85374 15.3269C9.46321 14.9364 9.46321 14.3032 9.85374 13.9127L15.5106 8.25586L9.85374 2.599C9.46321 2.20848 9.46321 1.57532 9.85374 1.18479C10.2443 0.794266 10.8774 0.794266 11.2679 1.18479L17.6319 7.54875ZM0.563904 7.25586L16.9248 7.25586L16.9248 9.25586L0.563904 9.25586L0.563904 7.25586Z" fill="white"/>
                   </svg>
@@ -903,10 +1102,502 @@ html(lang="ru")
           .examples-slogan
             span.examples-slogan__text Освободим
 
+    //- Этапы работы
+    section.steps#steps
+      .container.small.steps__container
+        .steps__row
+          img.bg.steps__bg(src="./images/pattern-2.png" alt="" aria-hidden="true")
 
+          h2.section-title.steps__title Как мы работаем?
 
+          .steps__wrapper
+            ul.steps-list
+              li.step
+                .step__counter
+                span.step__title Звонок или заявка 
+                span.step__about Вы оставляете заявку на сайте или звоните по указанному на нашем сайте номеру
+              li.step
+                .step__counter
+                span.step__title Бесплатная консультация
+                span.step__about Наш специалист определяет, можно ли списать ваши долги через процедуру банкротства 
+              li.step
+                .step__counter
+                span.step__title Встреча в офисе
+                span.step__about Вы приезжаете к нам в офис во Владивостоке для личной консультации 
+              li.step
+                .step__counter
+                span.step__title Анализ ситуации
+                span.step__about Если ваша ситуация сложная, в таком случае потребуется платный анализ ситуации 
+              li.step
+                .step__counter
+                span.step__title Заключение договора
+                span.step__about Согласовываем с вами условия оплаты и заключаем договор на предоставление услуг 
+              li.step
+                .step__counter
+                span.step__title Подача документов в суд
+                span.step__about Собираем необходимые документы во всех инстанциях и подаём их в арбитражный суд 
+              li.step
+                .step__counter
+                span.step__title Назначение финансового управляющего 
+                span.step__about С нашей стороны будет назначен лояльный к вам арбитражный управляющий 
+              li.step
+                .step__counter
+                span.step__title Процедура банкротства
+                span.step__about В ходе банкротства идет частичная реализация имущества, если это обсуждалось заранее
+              li.step
+                .step__counter
+                span.step__title Списание долгов
+                span.step__about Итогом нашей работы будут полностью списанные ваши долги по решению суда
+    
+            include includes/buttons/action-button
 
+    //- Обращение автора проекта
+    section.appeal#appeal
+      .container.appeal__container
+        .appeal__row
+          h2.section-title.appeal__title 
+            span.section-title__text Посмотрите обращение основателя нашей компании
+            span.appeal__author Никиты Александровича Чижевского
 
+            .appeal__wrapper
+              .appeal__video-container
+                .video-play
+                  button.video-play__button(type="button")
+                    <svg class="video-play__icon" width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 12L0.499999 23.2583L0.5 0.741669L20 12Z" fill="white"/>
+                    </svg>
+                  span.video-play__text Смотреть обращение
+
+                video.appeal__video(poster="./images/video-poster.jpg")
+                  source(src="./videos/video.mp4" type="video/mp4")
+    
+    //- Статистика
+    section.stat#stat
+      .container.stat__container
+        .stat__row
+          h2.section-title.hidden Статистика
+          img.bg.stat__bg(src="./images/pattern-3.png" alt="" aria-hidden="true")
+
+          .stat-title
+            span.stat-title__top О компании #[br] «Освободим»
+            span.stat-title__bottom в цифрах
+
+          .stat__line
+            ul.stat-list
+              li.stat-elem
+                img.stat-elem__icon(src="./images/stat-icon-1.svg" alt="" aria-hidden="true")
+                span.stat-elem__value 2013
+                span.stat-elem__name год основания
+              li.stat-elem
+                img.stat-elem__icon(src="./images/stat-icon-2.svg" alt="" aria-hidden="true")
+                span.stat-elem__value 220
+                span.stat-elem__name юристов в штате
+              li.stat-elem
+                img.stat-elem__icon(src="./images/stat-icon-3.svg" alt="" aria-hidden="true")
+                span.stat-elem__value &gt; 310 млрд. руб.
+                span.stat-elem__name долгов списано клиентам
+              li.stat-elem
+                img.stat-elem__icon(src="./images/stat-icon-4.svg" alt="" aria-hidden="true")
+                span.stat-elem__value 5800+
+                span.stat-elem__name выигранных дел
+    
+    //- Отзывы
+    section.reviews#reviews
+      .container.reviews__container
+        .reviews__row
+          h2.section-title.reviews__title #[b Почитайте отзывы] #[br] наших клиентов
+    
+          .reviews__wrapper
+            .reviews__tabs.reviews-tabs
+              button.reviews-tabs__tab.active(type="button" data-linked-selector=".slider-video-container" data-type="video") Видео
+              button.reviews-tabs__tab(type="button" data-linked-selector=".slider-text-container" data-type="text") Текст
+
+            .reviews__sliders-wrapper
+              .reviews__slider-outer.slider-all-container
+                //- //- Элементы управления
+                //- button.slider-all-container__nav.slider-all-container__nav_to-prev(type="button")
+                //-   <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                //-     <path d="M0.368088 7.54875C-0.0224361 7.93928 -0.0224362 8.57244 0.368088 8.96296L6.73205 15.3269C7.12257 15.7175 7.75574 15.7175 8.14626 15.3269C8.53679 14.9364 8.53679 14.3032 8.14626 13.9127L2.48941 8.25586L8.14626 2.599C8.53679 2.20848 8.53679 1.57532 8.14626 1.18479C7.75574 0.794266 7.12257 0.794266 6.73205 1.18479L0.368088 7.54875ZM17.4361 7.25586L1.0752 7.25586L1.0752 9.25586L17.4361 9.25586L17.4361 7.25586Z" fill="white"/>
+                //-   </svg>
+                //- button.slider-all-container__nav.slider-all-container__nav_to-next(type="button")
+                //-   <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                //-     <path d="M17.6319 7.54875C18.0224 7.93928 18.0224 8.57244 17.6319 8.96296L11.268 15.3269C10.8774 15.7175 10.2443 15.7175 9.85374 15.3269C9.46321 14.9364 9.46321 14.3032 9.85374 13.9127L15.5106 8.25586L9.85374 2.599C9.46321 2.20848 9.46321 1.57532 9.85374 1.18479C10.2443 0.794266 10.8774 0.794266 11.2679 1.18479L17.6319 7.54875ZM0.563904 7.25586L16.9248 7.25586L16.9248 9.25586L0.563904 9.25586L0.563904 7.25586Z" fill="white"/>
+                //-   </svg>
+
+                .slider-video-container
+                  //- Элементы управления
+                  button.slider-all-container__nav.to-video.slider-all-container__nav_to-prev(type="button")
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.368088 7.54875C-0.0224361 7.93928 -0.0224362 8.57244 0.368088 8.96296L6.73205 15.3269C7.12257 15.7175 7.75574 15.7175 8.14626 15.3269C8.53679 14.9364 8.53679 14.3032 8.14626 13.9127L2.48941 8.25586L8.14626 2.599C8.53679 2.20848 8.53679 1.57532 8.14626 1.18479C7.75574 0.794266 7.12257 0.794266 6.73205 1.18479L0.368088 7.54875ZM17.4361 7.25586L1.0752 7.25586L1.0752 9.25586L17.4361 9.25586L17.4361 7.25586Z" fill="white"/>
+                    </svg>
+                  button.slider-all-container__nav.to-video.slider-all-container__nav_to-next(type="button")
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.6319 7.54875C18.0224 7.93928 18.0224 8.57244 17.6319 8.96296L11.268 15.3269C10.8774 15.7175 10.2443 15.7175 9.85374 15.3269C9.46321 14.9364 9.46321 14.3032 9.85374 13.9127L15.5106 8.25586L9.85374 2.599C9.46321 2.20848 9.46321 1.57532 9.85374 1.18479C10.2443 0.794266 10.8774 0.794266 11.2679 1.18479L17.6319 7.54875ZM0.563904 7.25586L16.9248 7.25586L16.9248 9.25586L0.563904 9.25586L0.563904 7.25586Z" fill="white"/>
+                    </svg>
+                  .slider-video.active.swiper
+                    .swiper-wrapper
+                      .swiper-slide.slider-video-slide
+                        .slider-video-slide__wrapper
+                          button.slider-video__play(type="button")
+                            <svg width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.07916 4.15071L0.187076 7.55251L0.187077 0.748916L6.07916 4.15071Z" fill="white"/>
+                            </svg>
+                          video.slider-video__video(poster="./images/video-poster-2.jpg")
+                            source(src="./videos/video.mp4" type="video/mp4")
+                      .swiper-slide.slider-video-slide
+                        .slider-video-slide__wrapper
+                          button.slider-video__play(type="button")
+                            <svg width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.07916 4.15071L0.187076 7.55251L0.187077 0.748916L6.07916 4.15071Z" fill="white"/>
+                            </svg>
+                          video.slider-video__video(poster="./images/video-poster-3.jpg")
+                            source(src="./videos/video.mp4" type="video/mp4")
+                      .swiper-slide.slider-video-slide
+                        .slider-video-slide__wrapper
+                          button.slider-video__play(type="button")
+                            <svg width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.07916 4.15071L0.187076 7.55251L0.187077 0.748916L6.07916 4.15071Z" fill="white"/>
+                            </svg>
+                          video.slider-video__video(poster="./images/video-poster-4.jpg")
+                            source(src="./videos/video.mp4" type="video/mp4")
+
+                      .swiper-slide.slider-video-slide
+                        .slider-video-slide__wrapper
+                          button.slider-video__play(type="button")
+                            <svg width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.07916 4.15071L0.187076 7.55251L0.187077 0.748916L6.07916 4.15071Z" fill="white"/>
+                            </svg>
+                          video.slider-video__video(poster="./images/video-poster-2.jpg")
+                            source(src="./videos/video.mp4" type="video/mp4")
+                      .swiper-slide.slider-video-slide
+                        .slider-video-slide__wrapper
+                          button.slider-video__play(type="button")
+                            <svg width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.07916 4.15071L0.187076 7.55251L0.187077 0.748916L6.07916 4.15071Z" fill="white"/>
+                            </svg>
+                          video.slider-video__video(poster="./images/video-poster-3.jpg")
+                            source(src="./videos/video.mp4" type="video/mp4")
+                      .swiper-slide.slider-video-slide
+                        .slider-video-slide__wrapper
+                          button.slider-video__play(type="button")
+                            <svg width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.07916 4.15071L0.187076 7.55251L0.187077 0.748916L6.07916 4.15071Z" fill="white"/>
+                            </svg>
+                          video.slider-video__video(poster="./images/video-poster-4.jpg")
+                            source(src="./videos/video.mp4" type="video/mp4")
+
+                .slider-text-container
+                  //- Элементы управления
+                  button.slider-all-container__nav.to-text.slider-all-container__nav_to-prev(type="button")
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.368088 7.54875C-0.0224361 7.93928 -0.0224362 8.57244 0.368088 8.96296L6.73205 15.3269C7.12257 15.7175 7.75574 15.7175 8.14626 15.3269C8.53679 14.9364 8.53679 14.3032 8.14626 13.9127L2.48941 8.25586L8.14626 2.599C8.53679 2.20848 8.53679 1.57532 8.14626 1.18479C7.75574 0.794266 7.12257 0.794266 6.73205 1.18479L0.368088 7.54875ZM17.4361 7.25586L1.0752 7.25586L1.0752 9.25586L17.4361 9.25586L17.4361 7.25586Z" fill="white"/>
+                    </svg>
+                  button.slider-all-container__nav.to-text.slider-all-container__nav_to-next(type="button")
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.6319 7.54875C18.0224 7.93928 18.0224 8.57244 17.6319 8.96296L11.268 15.3269C10.8774 15.7175 10.2443 15.7175 9.85374 15.3269C9.46321 14.9364 9.46321 14.3032 9.85374 13.9127L15.5106 8.25586L9.85374 2.599C9.46321 2.20848 9.46321 1.57532 9.85374 1.18479C10.2443 0.794266 10.8774 0.794266 11.2679 1.18479L17.6319 7.54875ZM0.563904 7.25586L16.9248 7.25586L16.9248 9.25586L0.563904 9.25586L0.563904 7.25586Z" fill="white"/>
+                    </svg>
+
+                  .slider-text.swiper
+                    .swiper-wrapper
+                      .swiper-slide.slider-text-slide
+                        .slider-text-slide__wrapper
+                          a.slider-text-slide__link(href="#")
+                            img.slider-text-slide__link-image(src="./images/review-photo.jpg" alt="Mikhail Vlasenko")
+                            img.slider-text-slide__link-logo(src="./images/vk-logo.svg" alt="Mikhail Vlasenko в ВКонтакте")
+
+                          .slider-text-slide__text-block
+                            span.slider-text-slide__title Mikhail Vlasenko
+                            p.slider-text-slide__description Что-ж, БЛАГОДАРЮ всех людей за терпеливость и участие в столь нудном деле, как банкротство. Знание и умение - это сила!
+                      .swiper-slide.slider-text-slide
+                        .slider-text-slide__wrapper
+                          a.slider-text-slide__link(href="#")
+                            img.slider-text-slide__link-image(src="./images/review-photo.jpg" alt="Mikhail Vlasenko")
+                            img.slider-text-slide__link-logo(src="./images/vk-logo.svg" alt="Mikhail Vlasenko в ВКонтакте")
+
+                          .slider-text-slide__text-block
+                            span.slider-text-slide__title Mikhail Vlasenko
+                            p.slider-text-slide__description Что-ж, БЛАГОДАРЮ всех людей за терпеливость и участие в столь нудном деле, как банкротство. Знание и умение - это сила!
+                      .swiper-slide.slider-text-slide
+                        .slider-text-slide__wrapper
+                          a.slider-text-slide__link(href="#")
+                            img.slider-text-slide__link-image(src="./images/review-photo.jpg" alt="Mikhail Vlasenko")
+                            img.slider-text-slide__link-logo(src="./images/vk-logo.svg" alt="Mikhail Vlasenko в ВКонтакте")
+
+                          .slider-text-slide__text-block
+                            span.slider-text-slide__title Mikhail Vlasenko
+                            p.slider-text-slide__description Что-ж, БЛАГОДАРЮ всех людей за терпеливость и участие в столь нудном деле, как банкротство. Знание и умение - это сила!
+
+    //- Оставьте заявку (синяя вставка)
+    section.blue-section.request#request
+      .container.blue-section__container.request__container
+        .blue-section__row.request__row
+          .blue-section__line.request__line
+            .blue-section__text-block.request__text-block
+              h2.section-title.blue-section__title.request__title Оставьте заявку на бесплатную консультацию с юристом нашей компании «Освободим»
+              p.blue-section__text.request__text В ходе консультации мы определим, можно ли списать ваши долги через процедуру банкротства
+
+              .blue-section__image-block.request__image-block
+                picture
+                  source(srcset="./images/jurist-little.png 1x" type="image/png" media="(max-width: 620px)")
+                  source(srcset="./images/jurist-small.png 1x" type="image/png" media="(max-width: 1250px)")
+                  img.blue-section__image.request__image(src="./images/jurist.png" alt="Василий, директор юридического департамента")
+
+              button.trigger.yellow-action-btn.blue-section__action.request__action(type="button" data-popup-selector=".order-popup-4")
+                | Получить консультацию бесплатно    
+
+    //- Вопросы - ответы
+    section.answers#answers
+      .container.answers__container
+        .answers__row
+          h2.section-title.answers__title Вопросы – #[b ответы]
+          img.bg.answers__bg(src="./images/pattern-2.png" alt="" aria-hidden="true")
+
+          .answers__wrapper
+            ul.questions-list
+              li.question
+                .question__marker
+                .question__row
+                  span.question__title Судебные расходы входят в стоимость ваших услуг?
+                  
+                  .question__answer
+                    p Судебные расходы клиент оплачивает отдельно и не получает средства обратно в случае гарантийного возврата. В них входит вознаграждение арбитражного управляющего, который распоряжается средствами клиента во время оформления банкротства, несет за них ответственность перед судом и организовывает торги по реализации имущества. Данная сумма составляет 25 000 руб. Также в судебные расходы входит обязательная публикация в «Коммерсанте» о факте банкротства (10 000 руб.), госпошлина (300 руб.), внесение сведений о банкротстве в реестр (5 000 руб.), почтовые расходы (1 000 – 5 000 руб.) и доверенность (2 000 руб.)
+              li.question
+                .question__marker
+                .question__row
+                  span.question__title Сколько времени длится процедура банкротства?
+                  
+                  .question__answer
+                    p Судебные расходы клиент оплачивает отдельно и не получает средства обратно в случае гарантийного возврата. В них входит вознаграждение арбитражного управляющего, который распоряжается средствами клиента во время оформления банкротства, несет за них ответственность перед судом и организовывает торги по реализации имущества. Данная сумма составляет 25 000 руб. Также в судебные расходы входит обязательная публикация в «Коммерсанте» о факте банкротства (10 000 руб.), госпошлина (300 руб.), внесение сведений о банкротстве в реестр (5 000 руб.), почтовые расходы (1 000 – 5 000 руб.) и доверенность (2 000 руб.)
+              li.question
+                .question__marker
+                .question__row
+                  span.question__title Возможно ли полное списание долгов через процедуру банкротства?
+                  
+                  .question__answer
+                    p Судебные расходы клиент оплачивает отдельно и не получает средства обратно в случае гарантийного возврата. В них входит вознаграждение арбитражного управляющего, который распоряжается средствами клиента во время оформления банкротства, несет за них ответственность перед судом и организовывает торги по реализации имущества. Данная сумма составляет 25 000 руб. Также в судебные расходы входит обязательная публикация в «Коммерсанте» о факте банкротства (10 000 руб.), госпошлина (300 руб.), внесение сведений о банкротстве в реестр (5 000 руб.), почтовые расходы (1 000 – 5 000 руб.) и доверенность (2 000 руб.)
+              li.question
+                .question__marker
+                .question__row
+                  span.question__title Можно ли имущество в процессе оформления банкротства?
+                  
+                  .question__answer
+                    p Судебные расходы клиент оплачивает отдельно и не получает средства обратно в случае гарантийного возврата. В них входит вознаграждение арбитражного управляющего, который распоряжается средствами клиента во время оформления банкротства, несет за них ответственность перед судом и организовывает торги по реализации имущества. Данная сумма составляет 25 000 руб. Также в судебные расходы входит обязательная публикация в «Коммерсанте» о факте банкротства (10 000 руб.), госпошлина (300 руб.), внесение сведений о банкротстве в реестр (5 000 руб.), почтовые расходы (1 000 – 5 000 руб.) и доверенность (2 000 руб.)
+              li.question
+                .question__marker
+                .question__row
+                  span.question__title Возможна ли рассрочка на ваши услуги?
+                  
+                  .question__answer
+                    p Судебные расходы клиент оплачивает отдельно и не получает средства обратно в случае гарантийного возврата. В них входит вознаграждение арбитражного управляющего, который распоряжается средствами клиента во время оформления банкротства, несет за них ответственность перед судом и организовывает торги по реализации имущества. Данная сумма составляет 25 000 руб. Также в судебные расходы входит обязательная публикация в «Коммерсанте» о факте банкротства (10 000 руб.), госпошлина (300 руб.), внесение сведений о банкротстве в реестр (5 000 руб.), почтовые расходы (1 000 – 5 000 руб.) и доверенность (2 000 руб.)
+              li.question
+                .question__marker
+                .question__row
+                  span.question__title Что будет, если юрист, который занимается моим делом, уволится?
+                  
+                  .question__answer
+                    p Судебные расходы клиент оплачивает отдельно и не получает средства обратно в случае гарантийного возврата. В них входит вознаграждение арбитражного управляющего, который распоряжается средствами клиента во время оформления банкротства, несет за них ответственность перед судом и организовывает торги по реализации имущества. Данная сумма составляет 25 000 руб. Также в судебные расходы входит обязательная публикация в «Коммерсанте» о факте банкротства (10 000 руб.), госпошлина (300 руб.), внесение сведений о банкротстве в реестр (5 000 руб.), почтовые расходы (1 000 – 5 000 руб.) и доверенность (2 000 руб.)
+              li.question
+                .question__marker
+                .question__row
+                  span.question__title При каких условиях возможно внесудебное банкротство?
+                  
+                  .question__answer
+                    p Судебные расходы клиент оплачивает отдельно и не получает средства обратно в случае гарантийного возврата. В них входит вознаграждение арбитражного управляющего, который распоряжается средствами клиента во время оформления банкротства, несет за них ответственность перед судом и организовывает торги по реализации имущества. Данная сумма составляет 25 000 руб. Также в судебные расходы входит обязательная публикация в «Коммерсанте» о факте банкротства (10 000 руб.), госпошлина (300 руб.), внесение сведений о банкротстве в реестр (5 000 руб.), почтовые расходы (1 000 – 5 000 руб.) и доверенность (2 000 руб.)
+              li.question
+                .question__marker
+                .question__row
+                  span.question__title Как работает ваша гарантия списания долгов?
+                  
+                  .question__answer
+                    p Судебные расходы клиент оплачивает отдельно и не получает средства обратно в случае гарантийного возврата. В них входит вознаграждение арбитражного управляющего, который распоряжается средствами клиента во время оформления банкротства, несет за них ответственность перед судом и организовывает торги по реализации имущества. Данная сумма составляет 25 000 руб. Также в судебные расходы входит обязательная публикация в «Коммерсанте» о факте банкротства (10 000 руб.), госпошлина (300 руб.), внесение сведений о банкротстве в реестр (5 000 руб.), почтовые расходы (1 000 – 5 000 руб.) и доверенность (2 000 руб.)
+
+    //- Оставление заявки
+    section.get-order.get-order-2#get-order
+      .container.get-order__container
+        .get-order__row
+          img.get-order__decor-img.get-order__decor-img_1(src="./images/order-decor-5.png" alt="" aria-hidden="true")
+          img.get-order__decor-img.get-order__decor-img_2(src="./images/order-decor-6.png" alt="" aria-hidden="true")
+
+          .get-order__content
+            h2.get-order__title Оставьте заявку на услугу банкротства под ключ
+            p.get-order__subtitle В случае, если у нас не получится списать ваши долги в рамках банкротства без сохранения имущества – вернем до 100% средств за наши услуги
+
+            button.yellow-action-btn.order-button.get-order__button.trigger(type="button" data-popup-selector=".order-popup-4")
+              | Получить банкротство с гарантией
+              <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.2493 2.22961L6.24932 11.2276L2.75081 7.73024L0 10.481L6.24937 16.7295L18 4.98043L15.2493 2.22961Z" fill="#1E1E1E"/>
+              </svg>
+
+    //- Контакты
+    section.contacts#contacts
+      .container.contacts__container
+        .contacts__row
+          h2.section-title.hidden Контакты
+
+          .contacts__wrapper
+            picture
+              source(srcset="./images/answer-decor-small.png" type="image/png" media="(max-width: 520px)")
+              img.contacts__decor-img(src="./images/answer-decor.png" alt="" aria-hidden="true")
+
+            span.contacts-title
+              span.contacts-title__top Остались
+              span.contacts-title__bottom Вопросы?
+            
+            .contacts-note
+              <svg class="contacts-note__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="9" width="12.728" height="12.728" transform="rotate(-45 0 9)" fill="#93DA49"/>
+              </svg>
+
+              span.contacts-note__text Свяжитесь с нами любым #[br] удобным вам способом
+
+            ul.contacts-list
+              li.contacts-item
+                span.contacts-item__name Звоните:
+                a.contacts-item__value(href="tel:74232061510")
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_304_4925)">
+                    <path d="M10.1174 7.22024C9.4439 7.22024 8.78264 7.11491 8.15601 6.90783C7.84896 6.8031 7.47149 6.89918 7.28409 7.09165L6.04725 8.02533C4.61287 7.25966 3.72931 6.37639 2.9741 4.95278L3.88031 3.74816C4.11575 3.51304 4.2002 3.16958 4.09902 2.84731C3.89105 2.21739 3.7854 1.55644 3.7854 0.882693C3.78543 0.395971 3.38946 0 2.90277 0H0.882664C0.395971 0 0 0.395971 0 0.882664C0 6.46144 4.53859 11 10.1174 11C10.6041 11 11 10.604 11 10.1173V8.10288C11 7.61621 10.604 7.22024 10.1174 7.22024Z" fill="#307FE2"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_304_4925">
+                    <rect width="11" height="11" fill="white"/>
+                    </clipPath>
+                    </defs>
+                  </svg>
+                  | +7 (423) 206-15-10
+              li.contacts-item
+                span.contacts-item__name Пишите:
+                a.contacts-item__value(href="mailto:vladivostok.osvobodim.com")
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <mask id="mask0_304_4932" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="11" height="11">
+                    <rect width="11" height="11" fill="url(#pattern0)"/>
+                    </mask>
+                    <g mask="url(#mask0_304_4932)">
+                    <rect x="-1" width="15" height="11" fill="#307FE2"/>
+                    </g>
+                    <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0_304_4932" transform="scale(0.00195312)"/>
+                    </pattern>
+                    <image id="image0_304_4932" width="512" height="512" xlink:href="data:image/png;base64,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"/>
+                    </defs>
+                  </svg>
+
+                  | vladivostok.osvobodim.com
+              
+            //- Социальные сети
+            .nav__socials.socials
+              ul.socials__list
+                li.socials__item
+                  a.socials__link(href="#" title="ВКонтакте")
+                    <svg class="default" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="17.8049" cy="17.967" rx="17.8049" ry="17.967" fill="#3197F4"/>
+                      <g clip-path="url(#clip0_304_6031)">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M23.8476 19.9465C24.4436 20.5284 25.0727 21.0759 25.6072 21.7164C25.8433 22.0011 26.0669 22.2948 26.2379 22.6252C26.4802 23.0948 26.2607 23.6115 25.8397 23.6396L23.2222 23.6384C22.5471 23.6944 22.0085 23.4226 21.5557 22.9611C21.1933 22.5919 20.8577 22.1991 20.5092 21.8175C20.3664 21.6615 20.2169 21.5148 20.0382 21.3988C19.6809 21.1668 19.3707 21.2378 19.1666 21.6105C18.9586 21.9896 18.9114 22.4093 18.891 22.8317C18.863 23.4481 18.6766 23.6101 18.0575 23.6383C16.7344 23.7007 15.4786 23.5005 14.3121 22.8331C13.2837 22.2446 12.4861 21.4139 11.792 20.4735C10.4404 18.6423 9.40543 16.63 8.4752 14.5614C8.26581 14.0954 8.41894 13.8452 8.93317 13.8363C9.78707 13.8198 10.6409 13.8209 11.4958 13.8352C11.8428 13.8402 12.0726 14.0393 12.2066 14.3672C12.6685 15.5031 13.2338 16.5839 13.9434 17.5856C14.1324 17.8524 14.325 18.1191 14.5994 18.3068C14.903 18.5146 15.1341 18.4457 15.2769 18.1076C15.3675 17.8932 15.4072 17.6623 15.4276 17.4326C15.4952 16.6426 15.5041 15.8539 15.3855 15.0667C15.3126 14.5754 15.0359 14.2573 14.5456 14.1643C14.2955 14.1169 14.3327 14.0238 14.4538 13.881C14.6642 13.6348 14.8621 13.4814 15.2566 13.4814H18.2147C18.6804 13.5734 18.7839 13.7826 18.8476 14.2512L18.8501 17.5371C18.8451 17.7185 18.9408 18.2568 19.2675 18.3769C19.529 18.4623 19.7014 18.2531 19.8583 18.0873C20.5666 17.3356 21.0721 16.4472 21.5236 15.5273C21.7241 15.1228 21.8964 14.7028 22.0634 14.283C22.1871 13.9716 22.3813 13.8183 22.7321 13.8251L25.5791 13.8277C25.6636 13.8277 25.749 13.8289 25.8307 13.8429C26.3105 13.9247 26.442 14.131 26.2938 14.5995C26.0603 15.3345 25.6061 15.947 25.1619 16.5624C24.6871 17.2194 24.1793 17.8538 23.7085 18.5147C23.2759 19.1182 23.3103 19.4224 23.8476 19.9465Z" fill="white"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_304_6031">
+                      <rect width="17.967" height="17.967" fill="white" transform="translate(8.38458 9.58203)"/>
+                      </clipPath>
+                      </defs>
+                    </svg>
+
+                    <svg class="mobile" width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="29.2339" cy="29.5" rx="29.2339" ry="29.5" fill="#A5E1FD"/>
+                      <g clip-path="url(#clip0_304_2082)">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M39.1552 32.7503C40.1337 33.7056 41.1666 34.6045 42.0442 35.6562C42.4319 36.1236 42.799 36.6059 43.0798 37.1483C43.4776 37.9193 43.1173 38.7678 42.4259 38.8139L38.1283 38.8119C37.0198 38.9039 36.1356 38.4577 35.3921 37.6998C34.7971 37.0937 34.246 36.4487 33.6739 35.8222C33.4393 35.5661 33.1938 35.3252 32.9005 35.1347C32.3139 34.7539 31.8046 34.8705 31.4693 35.4824C31.1279 36.1047 31.0504 36.7939 31.0169 37.4874C30.9709 38.4994 30.665 38.7655 29.6484 38.8118C27.476 38.9143 25.4142 38.5856 23.4988 37.4897C21.8102 36.5235 20.5008 35.1596 19.361 33.6155C17.1419 30.6088 15.4426 27.3049 13.9152 23.9085C13.5714 23.1433 13.8229 22.7325 14.6672 22.718C16.0692 22.6907 17.471 22.6927 18.8747 22.716C19.4445 22.7244 19.8217 23.0512 20.0417 23.5895C20.8003 25.4546 21.7284 27.2291 22.8935 28.8739C23.2037 29.3118 23.5201 29.7498 23.9706 30.058C24.469 30.3992 24.8484 30.2861 25.0829 29.731C25.2317 29.3789 25.2968 28.9998 25.3303 28.6227C25.4414 27.3256 25.456 26.0307 25.2612 24.7381C25.1416 23.9314 24.6872 23.4091 23.8823 23.2565C23.4715 23.1786 23.5327 23.0258 23.7316 22.7913C24.077 22.387 24.4019 22.1353 25.0495 22.1353H29.9065C30.6712 22.2862 30.841 22.6297 30.9457 23.3991L30.9498 28.7942C30.9415 29.092 31.0986 29.9759 31.6351 30.173C32.0645 30.3134 32.3475 29.9699 32.6051 29.6976C33.768 28.4634 34.598 27.0048 35.3395 25.4944C35.6685 24.8302 35.9514 24.1405 36.2256 23.4514C36.4288 22.94 36.7476 22.6884 37.3236 22.6995L41.9982 22.7037C42.1368 22.7037 42.277 22.7058 42.4113 22.7287C43.199 22.863 43.4148 23.2018 43.1716 23.971C42.7882 25.1778 42.0424 26.1835 41.3131 27.1939C40.5336 28.2725 39.6998 29.3143 38.9267 30.3993C38.2165 31.3902 38.2729 31.8897 39.1552 32.7503Z" fill="#307FE2"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_304_2082">
+                      <rect width="29.5" height="29.5" fill="white" transform="translate(13.7665 15.7329)"/>
+                      </clipPath>
+                      </defs>
+                    </svg>
+
+                li.socials__item
+                  a.socials__link(href="#" title="Ютуб")
+                    <svg class="default" width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="18.6016" cy="17.967" rx="17.8049" ry="17.967" fill="#3197F4"/>
+                      <path d="M18.5959 11.3477C18.5959 11.3477 12.7382 11.3477 11.268 11.7333C10.4808 11.9553 9.83265 12.6095 9.6127 13.4158C9.23068 14.8998 9.23067 17.9729 9.23067 17.9729C9.23067 17.9729 9.23068 21.0578 9.6127 22.5184C9.83265 23.3246 10.4693 23.9672 11.268 24.1892C12.7498 24.5865 18.5959 24.5865 18.5959 24.5865C18.5959 24.5865 24.4651 24.5865 25.9353 24.2009C26.7341 23.9789 27.3707 23.348 27.5791 22.53C27.9727 21.0578 27.9727 17.9846 27.9727 17.9846C27.9727 17.9846 27.9842 14.8998 27.5791 13.4158C27.3707 12.6095 26.7341 11.967 25.9353 11.7566C24.4651 11.3477 18.5959 11.3477 18.5959 11.3477ZM16.7321 15.1336L21.6058 17.9729L16.7321 20.8006V15.1336Z" fill="white"/>
+                    </svg>
+
+                    <svg class="mobile" width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="29.7017" cy="29.5" rx="29.2339" ry="29.5" fill="#A5E1FD"/>
+                      <path d="M29.6919 18.6313C29.6919 18.6313 20.0742 18.6314 17.6603 19.2645C16.3678 19.629 15.3036 20.7032 14.9424 22.027C14.3152 24.4635 14.3152 29.5094 14.3152 29.5094C14.3152 29.5094 14.3152 34.5743 14.9424 36.9725C15.3036 38.2963 16.3488 39.3513 17.6603 39.7159C20.0932 40.3682 29.6919 40.3682 29.6919 40.3682C29.6919 40.3682 39.3287 40.3682 41.7425 39.7351C43.054 39.3705 44.0993 38.3347 44.4414 36.9917C45.0876 34.5744 45.0877 29.5286 45.0877 29.5286C45.0877 29.5286 45.1067 24.4635 44.4414 22.027C44.0993 20.7032 43.054 19.6482 41.7425 19.3029C39.3287 18.6314 29.6919 18.6313 29.6919 18.6313ZM26.6317 24.8474L34.6339 29.5094L26.6317 34.1521V24.8474Z" fill="#307FE2"/>
+                    </svg>
+
+                li.socials__item
+                  a.socials__link(href="#" title="Инстаграм")
+                    <svg class="default" width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="18.3983" cy="17.967" rx="17.8049" ry="17.967" fill="#3197F4"/>
+                      <g clip-path="url(#clip0_304_6019)">
+                      <path d="M26.8161 14.4604C26.7765 13.556 26.6316 12.9342 26.424 12.3954C26.2098 11.8235 25.8803 11.3115 25.4486 10.8859C25.0268 10.4536 24.516 10.1177 23.9558 9.90495C23.4188 9.69544 22.8059 9.54918 21.9096 9.50931C21.0067 9.46606 20.72 9.45605 18.4299 9.45605C16.1398 9.45605 15.8531 9.46606 14.9535 9.50593C14.0573 9.54581 13.4411 9.69219 12.9073 9.90157C12.3405 10.1177 11.8331 10.4502 11.4113 10.8859C10.9829 11.3115 10.6502 11.8269 10.4392 12.3922C10.2316 12.9342 10.0866 13.5526 10.0471 14.457C10.0043 15.3682 9.99435 15.6574 9.99435 17.9684C9.99435 20.2794 10.0043 20.5686 10.0438 21.4764C10.0833 22.3808 10.2284 23.0026 10.436 23.5414C10.6502 24.1133 10.9829 24.6253 11.4113 25.0509C11.8331 25.4832 12.3438 25.8191 12.904 26.0319C13.4411 26.2414 14.0539 26.3876 14.9503 26.4275C15.8498 26.4675 16.1366 26.4774 18.4267 26.4774C20.7168 26.4774 21.0035 26.4675 21.9031 26.4275C22.7993 26.3876 23.4155 26.2414 23.9493 26.0319C25.0829 25.5896 25.9791 24.6852 26.4174 23.5414C26.6249 22.9994 26.77 22.3808 26.8095 21.4764C26.849 20.5686 26.8589 20.2794 26.8589 17.9684C26.8589 15.6574 26.8556 15.3682 26.8161 14.4604ZM25.2971 21.4099C25.2608 22.2412 25.1224 22.6901 25.0071 22.9894C24.7236 23.7309 24.1404 24.3194 23.4056 24.6054C23.109 24.7218 22.661 24.8614 21.8404 24.8979C20.9507 24.9379 20.6839 24.9478 18.4333 24.9478C16.1827 24.9478 15.9125 24.9379 15.026 24.8979C14.2022 24.8614 13.7574 24.7218 13.4608 24.6054C13.0951 24.469 12.7623 24.2529 12.4921 23.9703C12.212 23.6943 11.9978 23.3617 11.8627 22.9927C11.7473 22.6935 11.609 22.2412 11.5728 21.4133C11.5332 20.5155 11.5234 20.2461 11.5234 17.975C11.5234 15.7039 11.5332 15.4313 11.5728 14.5369C11.609 13.7056 11.7473 13.2567 11.8627 12.9574C11.9978 12.5883 12.212 12.2525 12.4954 11.9798C12.7688 11.6971 13.0984 11.481 13.4642 11.3448C13.7607 11.2284 14.2089 11.0887 15.0294 11.0521C15.919 11.0122 16.186 11.0022 18.4365 11.0022C20.6904 11.0022 20.9573 11.0122 21.8437 11.0521C22.6675 11.0887 23.1124 11.2284 23.4089 11.3448C23.7746 11.481 24.1075 11.6971 24.3777 11.9798C24.6577 12.2558 24.8719 12.5883 25.0071 12.9574C25.1224 13.2567 25.2608 13.7089 25.2971 14.5369C25.3366 15.4347 25.3465 15.7039 25.3465 17.975C25.3465 20.2461 25.3366 20.5121 25.2971 21.4099Z" fill="white"/>
+                      <path d="M18.4296 13.5957C16.0374 13.5957 14.0965 15.5542 14.0965 17.9683C14.0965 20.3824 16.0374 22.3408 18.4296 22.3408C20.8219 22.3408 22.7627 20.3824 22.7627 17.9683C22.7627 15.5542 20.8219 13.5957 18.4296 13.5957ZM18.4296 20.8046C16.8776 20.8046 15.6188 19.5344 15.6188 17.9683C15.6188 16.4021 16.8776 15.1319 18.4296 15.1319C19.9816 15.1319 21.2404 16.4021 21.2404 17.9683C21.2404 19.5344 19.9816 20.8046 18.4296 20.8046Z" fill="white"/>
+                      <path d="M23.9461 13.4231C23.9461 13.9868 23.4931 14.4439 22.9343 14.4439C22.3757 14.4439 21.9228 13.9868 21.9228 13.4231C21.9228 12.8593 22.3757 12.4023 22.9343 12.4023C23.4931 12.4023 23.9461 12.8593 23.9461 13.4231Z" fill="white"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_304_6019">
+                      <rect width="16.8678" height="17.0214" fill="white" transform="translate(9.9645 9.45605)"/>
+                      </clipPath>
+                      </defs>
+                    </svg>
+
+                    <svg class="mobile" width="60" height="59" viewBox="0 0 60 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="30.1695" cy="29.5" rx="29.2339" ry="29.5" fill="#A5E1FD"/>
+                      <g clip-path="url(#clip0_304_2070)">
+                      <path d="M43.9906 23.743C43.9258 22.258 43.6878 21.2371 43.3469 20.3525C42.9952 19.4135 42.4542 18.5728 41.7454 17.874C41.0528 17.1642 40.2142 16.6127 39.2945 16.2634C38.4128 15.9194 37.4064 15.6793 35.9348 15.6138C34.4522 15.5428 33.9816 15.5264 30.2214 15.5264C26.4613 15.5264 25.9906 15.5428 24.5136 15.6083C23.042 15.6737 22.0303 15.9141 21.1539 16.2579C20.2232 16.6127 19.3901 17.1587 18.6975 17.874C17.9942 18.5728 17.4479 19.4191 17.1015 20.3472C16.7606 21.2371 16.5226 22.2525 16.4577 23.7374C16.3874 25.2335 16.3711 25.7084 16.3711 29.5028C16.3711 33.2972 16.3874 33.7721 16.4522 35.2626C16.5171 36.7475 16.7553 37.7684 17.0962 38.653C17.4479 39.592 17.9942 40.4327 18.6975 41.1316C19.3901 41.8413 20.2287 42.3928 21.1484 42.7422C22.0303 43.0862 23.0365 43.3263 24.5083 43.3918C25.9851 43.4574 26.456 43.4736 30.2162 43.4736C33.9763 43.4736 34.447 43.4574 35.924 43.3918C37.3956 43.3263 38.4073 43.0862 39.2837 42.7422C41.1449 42.016 42.6165 40.531 43.3361 38.653C43.6768 37.7631 43.915 36.7475 43.9799 35.2626C44.0447 33.7721 44.061 33.2972 44.061 29.5028C44.061 25.7084 44.0555 25.2335 43.9906 23.743ZM41.4966 35.1534C41.437 36.5183 41.2098 37.2553 41.0205 37.7467C40.5551 38.9642 39.5975 39.9305 38.391 40.4001C37.9041 40.5912 37.1684 40.8204 35.8211 40.8804C34.3603 40.9461 33.9222 40.9623 30.2269 40.9623C26.5317 40.9623 26.0881 40.9461 24.6326 40.8804C23.28 40.8204 22.5496 40.5912 22.0627 40.4001C21.4623 40.1762 20.9157 39.8213 20.4721 39.3572C20.0123 38.9041 19.6606 38.3581 19.4387 37.7522C19.2493 37.2609 19.0221 36.5183 18.9628 35.1589C18.8977 33.6849 18.8816 33.2426 18.8816 29.5137C18.8816 25.7848 18.8977 25.3371 18.9628 23.8686C19.0221 22.5037 19.2493 21.7667 19.4387 21.2753C19.6606 20.6692 20.0123 20.1179 20.4776 19.6701C20.9265 19.206 21.4675 18.8511 22.0682 18.6274C22.5551 18.4363 23.291 18.2071 24.6381 18.1469C26.0988 18.0815 26.5372 18.0651 30.2322 18.0651C33.933 18.0651 34.3711 18.0815 35.8266 18.1469C37.1792 18.2071 37.9096 18.4363 38.3965 18.6274C38.9969 18.8511 39.5434 19.206 39.987 19.6701C40.4469 20.1233 40.7986 20.6692 41.0205 21.2753C41.2098 21.7667 41.437 22.509 41.4966 23.8686C41.5615 25.3427 41.5778 25.7848 41.5778 29.5137C41.5778 33.2426 41.5615 33.6793 41.4966 35.1534Z" fill="#307FE2"/>
+                      <path d="M30.2209 22.3237C26.2931 22.3237 23.1063 25.5393 23.1063 29.503C23.1063 33.4667 26.2931 36.6823 30.2209 36.6823C34.1488 36.6823 37.3354 33.4667 37.3354 29.503C37.3354 25.5393 34.1488 22.3237 30.2209 22.3237ZM30.2209 34.16C27.6727 34.16 25.6058 32.0745 25.6058 29.503C25.6058 26.9315 27.6727 24.846 30.2209 24.846C32.7692 24.846 34.8359 26.9315 34.8359 29.503C34.8359 32.0745 32.7692 34.16 30.2209 34.16Z" fill="#307FE2"/>
+                      <path d="M39.2782 22.0398C39.2782 22.9654 38.5345 23.7158 37.6171 23.7158C36.6999 23.7158 35.9562 22.9654 35.9562 22.0398C35.9562 21.114 36.6999 20.3638 37.6171 20.3638C38.5345 20.3638 39.2782 21.114 39.2782 22.0398Z" fill="#307FE2"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_304_2070">
+                      <rect width="27.6953" height="27.9474" fill="white" transform="translate(16.322 15.5264)"/>
+                      </clipPath>
+                      </defs>
+                    </svg>
+
+                li.socials__item
+                  a.socials__link(href="#" title="Одноклассники")
+                    <svg class="default" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="18.195" cy="17.967" rx="17.8049" ry="17.967" fill="#3197F4"/>
+                      <g clip-path="url(#clip0_304_6025)">
+                      <path d="M18.195 18.6673C20.7157 18.6673 22.7591 16.6053 22.7591 14.0617C22.7591 11.518 20.7157 9.45605 18.195 9.45605C15.6743 9.45605 13.6309 11.5181 13.6309 14.0617C13.634 16.604 15.6756 18.6642 18.195 18.6673ZM18.195 11.5817C19.5523 11.5817 20.6526 12.692 20.6526 14.0617C20.6526 15.4314 19.5523 16.5417 18.195 16.5417C16.8377 16.5417 15.7374 15.4314 15.7374 14.0617C15.7374 12.692 16.8377 11.5817 18.195 11.5817Z" fill="white"/>
+                      <path d="M22.6657 20.8499C23.1617 20.5202 23.4606 19.9613 23.4613 19.3619C23.4682 18.8645 23.19 18.4078 22.7472 18.1893C22.2922 17.9599 21.7475 18.0116 21.3428 18.3225C19.4673 19.7023 16.9234 19.7023 15.0479 18.3225C14.6426 18.0132 14.0989 17.9616 13.6435 18.1893C13.2009 18.4077 12.9226 18.864 12.9287 19.3612C12.9298 19.9605 13.2286 20.5192 13.7243 20.8492C14.3603 21.276 15.053 21.61 15.7817 21.8412C15.9053 21.8799 16.0328 21.9158 16.1644 21.9489L14.0424 24.0427C13.4858 24.5877 13.4723 25.4848 14.0124 26.0466C14.5525 26.6083 15.4415 26.6219 15.9982 26.0769C16.0098 26.0655 16.0212 26.054 16.0324 26.0422L18.1951 23.7833L20.362 26.0465C20.9016 26.6086 21.7907 26.6229 22.3478 26.0784C22.9048 25.5338 22.919 24.6367 22.3794 24.0745C22.3681 24.0628 22.3566 24.0512 22.3449 24.0398L20.2264 21.9482C20.358 21.9142 20.486 21.878 20.6105 21.8398C21.3384 21.6095 22.0304 21.2762 22.6657 20.8499Z" fill="white"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_304_6025">
+                      <rect width="16.8678" height="17.0214" fill="white" transform="translate(9.76108 9.45605)"/>
+                      </clipPath>
+                      </defs>
+                    </svg>
+
+                    <svg class="mobile" width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="29.6372" cy="29.5" rx="29.2339" ry="29.5" fill="#A5E1FD"/>
+                      <g clip-path="url(#clip0_304_2076)">
+                      <path d="M29.6374 30.6504C33.7761 30.6504 37.1313 27.2647 37.1313 23.0883C37.1313 18.9119 33.7762 15.5264 29.6374 15.5264C25.4987 15.5264 22.1437 18.912 22.1437 23.0884C22.1488 27.2626 25.5009 30.6452 29.6374 30.6504ZM29.6374 19.0165C31.866 19.0165 33.6726 20.8395 33.6726 23.0884C33.6726 25.3372 31.866 27.1603 29.6374 27.1603C27.4089 27.1603 25.6023 25.3372 25.6023 23.0884C25.6023 20.8395 27.4089 19.0165 29.6374 19.0165Z" fill="#307FE2"/>
+                      <path d="M36.9779 34.2338C37.7923 33.6925 38.283 32.7748 38.2841 31.7907C38.2955 30.974 37.8388 30.2241 37.1117 29.8653C36.3646 29.4888 35.4703 29.5736 34.8058 30.084C31.7264 32.3495 27.5497 32.3495 24.4702 30.084C23.8047 29.5762 22.912 29.4915 22.1644 29.8653C21.4376 30.224 20.9807 30.9732 20.9908 31.7895C20.9925 32.7734 21.483 33.6909 22.297 34.2326C23.3413 34.9335 24.4786 35.4818 25.675 35.8614C25.8779 35.925 26.0873 35.9839 26.3033 36.0383L22.8193 39.4761C21.9054 40.3709 21.8833 41.8439 22.77 42.7662C23.6568 43.6885 25.1165 43.7108 26.0305 42.816C26.0496 42.7973 26.0683 42.7784 26.0866 42.7591L29.6376 39.0502L33.1954 42.7661C34.0814 43.6891 35.5412 43.7125 36.4559 42.8184C37.3705 41.9244 37.3937 40.4513 36.5077 39.5283C36.4892 39.509 36.4703 39.49 36.4511 39.4714L32.9729 36.0371C33.1888 35.9812 33.399 35.9219 33.6035 35.8591C34.7986 35.4809 35.9348 34.9337 36.9779 34.2338Z" fill="#307FE2"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_304_2076">
+                      <rect width="27.6953" height="27.9474" fill="white" transform="translate(15.7898 15.5264)"/>
+                      </clipPath>
+                      </defs>
+                    </svg>
+
+    //- Карта
+    section.map#map
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A16b6bfdbdc85612355bbc4787c07cb13fcb39e2535fd1b6b3f8647428e001d7e&amp;source=constructor" width="100%" height="700" frameborder="0"></iframe>
+
+      .container.map__container
+        .map__row
+          h2.section-title.hidden Интерактивная карта
+
+          address.map-note
+            img.map-note__icon(src="./images/place.svg" alt="" aria-hidden="true")
+
+            .map-note__text-block
+              span.map-note__title Наш офис находится по адресу:
+              span.map-note__about Владивосток, ул. Борисенко, д. 10/7
 
 
 

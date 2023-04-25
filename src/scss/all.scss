@@ -268,3 +268,42 @@
   }
 }
 
+
+.socials {
+  margin-left: auto;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    column-gap: 7px;
+  }
+
+  &__link {
+    svg.default {
+      transition: transform ease .1s;
+    }
+
+    svg.mobile {
+      display: none;
+    }
+
+    svg.default ellipse,
+    svg.default path {
+      transition: fill ease .2s;
+    }
+  }
+
+  &__link:hover {
+    svg.default ellipse {
+      fill: #fff;
+    }
+
+    svg.default path {
+      fill: vars.$color-accent-1;
+    }
+  }
+
+  &__link:active svg.default {
+    transform: scale(.9);
+  }
+}

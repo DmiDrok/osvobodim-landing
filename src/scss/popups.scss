@@ -12,6 +12,7 @@
   transition: opacity ease .5s, visibility ease .5s;
   opacity: 0;
   visibility: hidden;
+  overflow-y: auto;
 
   &.active {
     opacity: 1;
@@ -275,10 +276,10 @@
       }
     }
 
-    &__row {
-      transform: translate(-50%, -60%);
-      top: 50%;
-    }
+    // &__row {
+    //   // transform: translate(-50%, -60%);
+    //   // top: 50%;
+    // }
 
     &__content {
       padding: 46px 18px 390px 18px;
@@ -314,7 +315,7 @@
     &-3,
     &-4 {
       .order-popup__decor-img {
-        transform: translate(-50%, 80%) rotate(-15deg);
+        transform: translate(-50%, 90%) rotate(-15deg);
       }
     }
 
@@ -328,6 +329,20 @@
       .order-popup__decor-img {
         transform: translate(-50%, 75%) rotate(15deg);
       }
+    }
+
+    &__input {
+      padding: 20px 10px;
+    }
+  }
+
+  @media (max-width: 350px) {
+    &__content {
+      padding: 46px 10px 390px 10px;
+    }
+
+    &__title {
+      font-size: 30px;
     }
   }
 }
